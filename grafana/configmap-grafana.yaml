@@ -1,0 +1,37 @@
+apiVersion: v1
+data:
+  datasources.yaml: |
+    apiVersion: 1
+    datasources:
+    - access: proxy
+      isDefault: true
+      name: Prometheus
+      type: prometheus
+      url: http://prometheus:9090
+  grafana.ini: |
+    [analytics]
+    check_for_updates = true
+    [grafana_net]
+    url = https://grafana.net
+    [log]
+    mode = console
+    [paths]
+    data = /var/lib/grafana/data
+    logs = /var/log/grafana
+    plugins = /var/lib/grafana/plugins
+    provisioning = /etc/grafana/provisioning
+    [alerting]
+    evaluation_timeout_seconds = 150
+    notification_timeout_seconds = 150
+    [external_image_storage.local]
+kind: ConfigMap
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","data":{"datasources.yaml":"apiVersion: 1\ndatasources:\n- access: proxy\n  isDefault: true\n  name: Prometheus\n  type: prometheus\n  url: http://prometheus:9090\n","grafana.ini":"[analytics]\ncheck_for_updates = true\n[grafana_net]\nurl = https://grafana.net\n[log]\nmode = console\n[paths]\ndata = /var/lib/grafana/data\nlogs = /var/log/grafana\nplugins = /var/lib/grafana/plugins\nprovisioning = /etc/grafana/provisioning\n[alerting]\nevaluation_timeout_seconds = 150\nnotification_timeout_seconds = 150\n[external_image_storage.local]\n"},"kind":"ConfigMap","metadata":{"annotations":{},"name":"grafana","namespace":"monitoring"}}
+  creationTimestamp: "2019-08-02T08:05:13Z"
+  name: grafana
+  namespace: monitoring
+  resourceVersion: "12879083"
+  selfLink: /api/v1/namespaces/monitoring/configmaps/grafana
+  uid: 4182707b-b4fc-11e9-86c5-42010a8000ba
