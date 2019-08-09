@@ -20,7 +20,7 @@ spec:
         runAsUser: 472
         fsGroup: 472
       containers:
-      - image: grafana/grafana:5.2.2
+      - image: grafana/grafana:6.1.6
         name: grafana
         resources:
           limits:
@@ -35,6 +35,12 @@ spec:
         volumeMounts:
         - mountPath: "/var/lib/grafana"
           name: grafana-persistent-volume
+        - mountPath: /etc/grafana/grafana.ini
+          name: config
+          subPath: grafana.ini
+        - mountPath: /etc/grafana/provisioning/datasources/datasources.yaml
+          name: config
+          subPath: datasources.yaml
         ports:
         - containerPort: 3000
           protocol: TCP
@@ -52,3 +58,8 @@ spec:
       volumes:
       - emptyDir: {}
         name: grafana-persistent-volume
+      - configMap:
+          defaultMode: 420
+          name: grafana
+        name: config
+  
