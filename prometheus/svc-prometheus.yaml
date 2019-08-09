@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-07-31T15:09:40Z"
+  labels:
+    app: prometheus
+  name: prometheus
+  namespace: monitoring
+  resourceVersion: "12446165"
+  selfLink: /api/v1/namespaces/monitoring/services/prometheus
+  uid: 385a4640-b3a5-11e9-86c5-42010a8000ba
+spec:
+  clusterIP: 10.11.242.122
+  ports:
+  - port: 9090
+    protocol: TCP
+    targetPort: 9090
+  selector:
+    app: prometheus
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
