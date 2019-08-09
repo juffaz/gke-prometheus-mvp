@@ -40,9 +40,9 @@ data:
         # See Supported Settings section for settings supporter for each
         # alert notification type.
         settings:
-          token: "xoxb-713213890608-707053234913-1qnDXaiXLwkRXULlv6WLwE77"
+          token: ""
           uploadImage: true
-          url: https://hooks.slack.com/services/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
+          url: https://hooks.slack.com/services/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
 kind: ConfigMap
 metadata:
   annotations:
