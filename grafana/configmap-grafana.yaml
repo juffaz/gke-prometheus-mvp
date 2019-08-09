@@ -25,24 +25,24 @@ data:
     notification_timeout_seconds = 150
     [external_image_storage.local]
   notifiers.yaml: |
-   notifiers:
-     - name: Slack
-       type: slack
-       uid: notifier1
-       # either
-       org_id: 1
-       # or
-       org_name: Main Org.
-       is_default: true
-       send_reminder: false
-       frequency: 1h
-       disable_resolve_message: false
-       # See Supported Settings section for settings supporter for each
-       # alert notification type.
-       settings:
-         token: "xoxb-713213890608-707053234913-1qnDXaiXLwkRXULlv6WLwE77"
-         uploadImage: true
-         url: https://hooks.slack.com/services/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
+    notifiers:
+      - name: Slack
+        type: slack
+        uid: notifier1
+        # either
+        org_id: 1
+        # or
+        org_name: Main Org.
+        is_default: true
+        send_reminder: false
+        frequency: 1h
+        disable_resolve_message: false
+        # See Supported Settings section for settings supporter for each
+        # alert notification type.
+        settings:
+          token: "xoxb-713213890608-707053234913-1qnDXaiXLwkRXULlv6WLwE77"
+          uploadImage: true
+          url: https://hooks.slack.com/services/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
 kind: ConfigMap
 metadata:
   annotations:
