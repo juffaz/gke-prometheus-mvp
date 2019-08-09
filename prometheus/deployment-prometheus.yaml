@@ -16,7 +16,7 @@ spec:
       # use version 2.1.0
       #  since the /-/ready and /-/healthy endpoints weren't available until
       #   1.8, and I have no legacy application running so, in with the new!
-      - image: quay.io/prometheus/prometheus:v2.1.0
+      - image: quay.io/prometheus/prometheus:v2.9.2
         name: prometheus
         command:
         - "/bin/prometheus"
