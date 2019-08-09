@@ -41,6 +41,9 @@ spec:
         - mountPath: /etc/grafana/provisioning/datasources/datasources.yaml
           name: config
           subPath: datasources.yaml
+        - mountPath: /etc/grafana/provisioning/notifiers/notifiers.yaml
+          name: config
+          subPath: notifiers.yaml 
         ports:
         - containerPort: 3000
           protocol: TCP
